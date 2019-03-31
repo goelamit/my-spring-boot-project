@@ -1,6 +1,7 @@
 package com.example.ag.rest;
 
 import java.net.URI;
+import java.util.List;
 
 import javax.validation.Valid;
 
@@ -22,9 +23,9 @@ public class RegisterationRest {
 	private RegisterationService registerService;
 
 	@GetMapping("/customers/all")
-	public String helloWorld() {
+	public List<Customer> getAll() {
 		
-		return "Hello Amit";
+		return registerService.getAllCustomers();
 	}
 	@PostMapping("/customers")
 	public ResponseEntity<Object> createCustomer(@Valid @RequestBody Customer customer) {

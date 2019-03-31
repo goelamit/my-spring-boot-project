@@ -1,5 +1,7 @@
 package com.example.ag.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,12 @@ public class RegisterationServiceImpl implements RegisterationService {
 	public Customer createCustomer(Customer customer) {
 
 		return registerDAO.createCustomer(customer);
+	}
+
+	@Override
+	public List<Customer> getAllCustomers() {
+		
+		return registerDAO.getAllCustomers();
 	}
 
 }
